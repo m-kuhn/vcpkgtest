@@ -27,6 +27,8 @@ jobs:
         ./vcpkg.exe --triplet=${{matrix.platform}}-windows `
                     --host-triplet=${{matrix.platform}}-windows `
                     install --recurse icu
+    - uses: m-kuhn/action-tmate@patch-1
+      if: always()
     - name: Package logs
       if: always()
       uses: actions/upload-artifact@v4
