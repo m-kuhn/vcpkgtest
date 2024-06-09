@@ -26,7 +26,7 @@ jobs:
         ./bootstrap-vcpkg.bat
         ./vcpkg.exe --triplet=${{matrix.platform}}-windows `
                     --host-triplet=${{matrix.platform}}-windows `
-                    install --recurse icu
+                    install --recurse gdal
     - uses: m-kuhn/action-tmate@patch-1
       if: always()
     - name: Package logs
